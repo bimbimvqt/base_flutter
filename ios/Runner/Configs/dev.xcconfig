@@ -1,0 +1,2 @@
+#include "Common.xcconfig"
+APP_ENV=dev
