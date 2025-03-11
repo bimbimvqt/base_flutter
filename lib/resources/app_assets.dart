@@ -29,17 +29,19 @@ class AppAssets {
   static const String icCondition = '${pathIcon}ic_condition.svg';
   static const String icLogout = '${pathIcon}ic_logout.svg';
   static const String icDropDown = '${pathIcon}ic_drop_down.png';
+  static const String icSplash = '${pathIcon}logo.jpg';
 
   // IMAGES
-  static const String imgLogo = '${path}img_logo.svg';
-  static const String imgLogoWhite = '${path}img_logo_white.svg';
-  static const String imgSlide = '${path}img_slide.svg';
-  static const String imgSlide1 = '${path}img_slide1.svg';
+  static const String imgVector1 = '${path}vector1.jpg';
+  static const String imgVector2 = '${path}vector2.jpg';
+  static const String imgVector3 = '${path}vector3.png';
+  static const String imgP1 = '${path}p1.png';
+  static const String imgP2 = '${path}p2.png';
+  static const String imgP3 = '${path}p3.png';
   static const String imgSlide2 = '${path}img_slide2.svg';
   static const String imgMap = '${path}img_map.svg';
   static const String imgAvatarDefault = '${path}img_avatar_default.png';
 
   //RAWS
   static const String rawLoading = '${pathRaw}loading.json';
-  static const String rawSplash = '${pathRaw}ani_splash.json';
 }

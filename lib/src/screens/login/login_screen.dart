@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:startup_app/resources/app_assets.dart';
+import 'package:startup_app/resources/custom_style.dart';
 import 'package:startup_app/src/screens/login/login_controller.dart';
+import 'package:startup_app/widgets/button_outline.dart';
+import 'package:startup_app/widgets/text_field.dart';
+
+import '../../../resources/dimensions.dart';
 
 class LoginScreen extends GetView<LoginController> {
   const LoginScreen({super.key});
@@ -9,102 +15,218 @@ class LoginScreen extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF020040),
-      body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 20.w),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      backgroundColor: Theme.of(context).colorScheme.secondary,
+      body: Column(
+        children: [
+          Container(
+            height: Get.height / 3.5,
+            width: Get.width,
+            color: Theme.of(context).colorScheme.secondary,
+            child: Stack(
               children: [
-                Text(
-                  'Hello',
-                  style: TextStyle(
-                    fontSize: 25.sp,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  child: Image.asset(
+                    AppAssets.imgVector3,
+                    width: 150.w,
                   ),
                 ),
-                CircleAvatar(
-                  radius: 30,
-                  backgroundImage: AssetImage('assets/images/5-min.jpg'),
+                Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 40.h),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Log In',
+                          style: CustomStyle.appBarTitleText(
+                            color: Theme.of(context).textTheme.bodyLarge?.color,
+                            fontSize: 36.sp,
+                          ),
+                        ),
+                        SizedBox(height: 10.h),
+                        Text(
+                          'Please sign in to your existing account',
+                          style: CustomStyle.body2Text(
+                            color: Theme.of(context).textTheme.bodyMedium?.color,
+                            fontSize: 16.sp,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 20.h,
-            ),
-            _buildCard()
-          ],
-        ),
+          ),
+          Obx(() => Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.onTertiary,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: Dimensions.defaultPadding.h,
+                    ),
+                    child: Column(
+                      children: [
+                        _buildTextField(context),
+                        SizedBox(height: 20.h),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: Dimensions.defaultPadding),
+                          child: ButtonOutLineWidget(
+                            title: 'LOG IN',
+                            onTap: () {
+                              if (controller.formKey.currentState!.validate()) {
+                                print('Login');
+                              }
+                            },
+                          ),
+                        ),
+                        SizedBox(height: 20.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Don\'t have an account?',
+                              style: CustomStyle.body2Text(
+                                color: Theme.of(context).textTheme.labelSmall?.color,
+                                fontSize: 16.sp,
+                              ),
+                            ),
+                            SizedBox(width: 10.w),
+                            GestureDetector(
+                              onTap: () {
+                                Get.offNamed('/register');
+                              },
+                              child: Text(
+                                'SIGN UP',
+                                style: CustomStyle.body2Text(
+                                    color: Theme.of(context).colorScheme.surface,
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ))
+        ],
       ),
     );
   }
 
-  Widget _buildCard() {
-    return Container(
-      width: double.infinity,
-      height: 200.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        gradient: LinearGradient(
-          colors: [
-            Color(0xFF4A148C),
-            Color(0xFF880E4F),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      padding: EdgeInsets.all(20.r),
+  Widget _buildTextField(BuildContext context) {
+    return Form(
+      key: controller.formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            '\$1.924,35',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: Dimensions.defaultPadding.w,
+            ),
+            child: Text('EMAIL', style: CustomStyle.body1Text(color: Theme.of(context).textTheme.labelMedium?.color)),
+          ),
+          SizedBox(height: 10.h),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: Dimensions.defaultPadding.w,
+            ),
+            child: TextFieldWidget(
+              validator: (value) {
+                if (!GetUtils.isEmail(value!)) {
+                  return 'Please enter a valid email';
+                }
+                return null;
+              },
+              controller: controller.emailController,
+              label: 'Email',
+              hint: 'Enter your email',
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '5489 7654 3210 7894',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18.sp,
-                ),
-              ),
-              Text(
-                '04/24',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16.sp,
-                ),
-              ),
-            ],
+          SizedBox(height: 20.h),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: Dimensions.defaultPadding.w,
+            ),
+            child:
+                Text('PASSWORD', style: CustomStyle.body1Text(color: Theme.of(context).textTheme.labelMedium?.color)),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(
-                Icons.wifi,
-                color: Colors.white,
-                size: 30.sp,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.red,
-                radius: 15,
-                child: CircleAvatar(
-                  backgroundColor: Colors.orange,
-                  radius: 10,
+          SizedBox(height: 10.h),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: Dimensions.defaultPadding.w,
+            ),
+            child: TextFieldWidget(
+              validator: (value) {
+                if (!GetUtils.isLengthGreaterOrEqual(value!, 6)) {
+                  return 'Password must be at least 6 characters';
+                }
+                return null;
+              },
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  controller.isObscure.value = !controller.isObscure.value;
+                },
+                child: Icon(
+                  controller.isObscure.value ? Icons.visibility_off : Icons.visibility,
                 ),
               ),
-            ],
+              obscureText: controller.isObscure.value ? false : true,
+              controller: controller.passwordController,
+              label: 'Password',
+              hint: 'Enter your password',
+            ),
+          ),
+          SizedBox(height: 20.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: Dimensions.defaultPadding.w),
+            child: Row(
+              children: [
+                Transform.scale(
+                  scale: 1.2,
+                  child: Checkbox(
+                    checkColor: Theme.of(context).colorScheme.onTertiary,
+                    splashRadius: 20,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    activeColor: Theme.of(context).colorScheme.surface,
+                    value: controller.isRememberMe.value,
+                    onChanged: (value) {
+                      controller.isRememberMe.value = value!;
+                    },
+                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Text(
+                  'Remember me',
+                  style: CustomStyle.body2Text(
+                    color: Theme.of(context).textTheme.labelSmall?.color,
+                    fontSize: 16.sp,
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  'Forgot Password?',
+                  style: CustomStyle.body2Text(
+                    color: Theme.of(context).textTheme.displayMedium?.color,
+                    fontSize: 16.sp,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

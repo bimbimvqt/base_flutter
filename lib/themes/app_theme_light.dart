@@ -5,7 +5,7 @@ ThemeData lightMode = ThemeData(
   scaffoldBackgroundColor: const Color(0xFFFFFFFF),
   colorScheme: const ColorScheme.light(
     primary: Color(0xFF0A4D68),
-    secondary: Color(0xFF088395),
+    secondary: Color(0xFF121223),
     onSecondary: Color(0xFF05BFDB),
     error: Color(0xFFF6465D),
     onSurface: Color(0xFF0ECB81),
@@ -15,7 +15,7 @@ ThemeData lightMode = ThemeData(
     secondaryContainer: Color(0xFFD2D2D2),
     primaryContainer: Color(0xFF000000),
     outline: Color(0xFFB9B9B9),
-    surface: Color(0xFFF0CF69),
+    surface: Color(0xFFFF7622),
     onInverseSurface: Color(0xFF088395),
     onSecondaryContainer: Color(0xFF088395),
     onSurfaceVariant: Color(0xFF454545),
@@ -23,11 +23,11 @@ ThemeData lightMode = ThemeData(
     surfaceContainerHighest: Colors.white,
     surfaceTint: Color(0xFF0A4D68),
     outlineVariant: Color(0xFF0A4D68),
-    tertiary: Color(0xFF0A4D68),
+    tertiary: Color(0xFFB4B9CA),
     errorContainer: Color(0xFFA4A4A4),
     onError: Color(0xFF737373),
     onTertiary: Color(0xFFFFFFFF),
-    onTertiaryContainer: Color(0xFF8A8A8A),
+    onTertiaryContainer: Color(0xFFF0F0F0),
     shadow: Color(0xFFD9D9D9),
     tertiaryContainer: Color(0xFF6C94A4),
     scrim: Colors.black,
@@ -59,7 +59,7 @@ ThemeData lightMode = ThemeData(
       color: Color(0xFFEDEDED),
     ),
     labelSmall: TextStyle(
-      color: Color(0xFFD2D2D2),
+      color: Color(0xFF7E8A97),
     ),
     titleMedium: TextStyle(
       color: Color(0xFF454545),
@@ -68,7 +68,7 @@ ThemeData lightMode = ThemeData(
       color: Color(0xFFFFFFFF),
     ),
     displayMedium: TextStyle(
-      color: Color(0xFF0A4D68),
+      color: Color(0xFFFF7622),
     ),
   ),
 );
