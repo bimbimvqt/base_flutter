@@ -1,5 +1,5 @@
 class GerminiApiServive {
-  final String apiKey = 'AIzaSyBrRg7G32QRg3uNVU-kvtlX0CmyUz8qAmo';
+  final String apiKey = '';
   late final String apiUrl;
 
   GerminiApiServive() {
