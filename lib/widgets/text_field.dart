@@ -18,6 +18,8 @@ class TextFieldWidget extends StatefulWidget {
     this.onTap,
     this.textInputAction,
     this.padding,
+    this.onChanged,
+    this.keyboardType,
   });
 
   final String? label;
@@ -29,6 +31,8 @@ class TextFieldWidget extends StatefulWidget {
   final bool? obscureText;
   final FormFieldValidator<String>? validator;
   final EdgeInsetsGeometry? padding;
+  final TextInputType? keyboardType;
+  final Function(String)? onChanged;
   final void Function()? onTap;
 
   final TextInputAction? textInputAction;
@@ -45,6 +49,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       onTapOutside: (event) {
         FocusScope.of(context).unfocus();
       },
+      onChanged: widget.onChanged,
       validator: widget.validator,
       decoration: InputDecoration(
         errorStyle: CustomStyle.body4Text(
@@ -63,13 +68,13 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
           borderSide: BorderSide.none,
         ),
         contentPadding:
-            EdgeInsets.symmetric(horizontal: Dimensions.defaultPadding, vertical: Dimensions.defaultPadding),
+            EdgeInsets.symmetric(horizontal: Dimensions.defaultPadding.w, vertical: Dimensions.defaultSPadding.h),
       ),
       style: TextStyle(
         fontSize: 16.sp,
         color: Color(0xFF333333),
       ),
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: widget.keyboardType,
     );
   }
 }

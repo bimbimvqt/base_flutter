@@ -22,13 +22,14 @@ class MyApp extends StatelessWidget {
         builder: (context) {
           final size = MediaQuery.of(context).size;
           return ScreenUtilInit(
-            designSize: size,
+            designSize: Size(size.width, size.height),
             minTextAdapt: true,
             splitScreenMode: true,
             builder: (context, child) {
               return MediaQuery(
                 data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
                 child: GetMaterialApp(
+                  defaultTransition: Transition.noTransition,
                   debugShowCheckedModeBanner: false,
                   title: 'startup_app',
                   theme: Provider.of<ThemeProvider>(context).themeData,

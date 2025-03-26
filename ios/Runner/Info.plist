@@ -45,5 +45,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photo library to pick images for chat.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to camera to take photos for chat.</string>
 </dict>
 </plist>

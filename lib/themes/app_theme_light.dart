@@ -17,7 +17,7 @@ ThemeData lightMode = ThemeData(
     outline: Color(0xFFB9B9B9),
     surface: Color(0xFFFF7622),
     onInverseSurface: Color(0xFF088395),
-    onSecondaryContainer: Color(0xFF088395),
+    onSecondaryContainer: Color(0xFFFFF1F2),
     onSurfaceVariant: Color(0xFF454545),
     inverseSurface: Color(0xFF088395),
     surfaceContainerHighest: Colors.white,
@@ -30,7 +30,7 @@ ThemeData lightMode = ThemeData(
     onTertiaryContainer: Color(0xFFF0F0F0),
     shadow: Color(0xFFD9D9D9),
     tertiaryContainer: Color(0xFF6C94A4),
-    scrim: Colors.black,
+    scrim: Color(0xFF131223),
     onErrorContainer: Colors.white,
   ),
   textTheme: const TextTheme(

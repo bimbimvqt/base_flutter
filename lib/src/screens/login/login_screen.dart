@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:startup_app/resources/app_assets.dart';
 import 'package:startup_app/resources/custom_style.dart';
+import 'package:startup_app/routes/app_pages.dart';
+import 'package:startup_app/src/screens/main_screen/main_screen.dart';
 import 'package:startup_app/src/screens/login/login_controller.dart';
 import 'package:startup_app/widgets/button_outline.dart';
 import 'package:startup_app/widgets/text_field.dart';
@@ -15,6 +17,15 @@ class LoginScreen extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.toNamed(
+            Routes.CHAT,
+          );
+        },
+        child: Icon(Icons.chat),
+      ),
+      resizeToAvoidBottomInset: false,
       backgroundColor: Theme.of(context).colorScheme.secondary,
       body: Column(
         children: [
@@ -83,9 +94,10 @@ class LoginScreen extends GetView<LoginController> {
                           child: ButtonOutLineWidget(
                             title: 'LOG IN',
                             onTap: () {
-                              if (controller.formKey.currentState!.validate()) {
-                                print('Login');
-                              }
+                              Get.offAllNamed(Routes.MAINSCREEN);
+                              // if (controller.formKey.currentState!.validate()) {
+                              //   debugPrint('Login');
+                              // }
                             },
                           ),
                         ),
@@ -103,7 +115,7 @@ class LoginScreen extends GetView<LoginController> {
                             SizedBox(width: 10.w),
                             GestureDetector(
                               onTap: () {
-                                Get.offNamed('/register');
+                                Get.toNamed(Routes.REGISTER);
                               },
                               child: Text(
                                 'SIGN UP',
@@ -159,8 +171,10 @@ class LoginScreen extends GetView<LoginController> {
             padding: EdgeInsets.symmetric(
               horizontal: Dimensions.defaultPadding.w,
             ),
-            child:
-                Text('PASSWORD', style: CustomStyle.body1Text(color: Theme.of(context).textTheme.labelMedium?.color)),
+            child: Text(
+              'PASSWORD',
+              style: CustomStyle.body1Text(color: Theme.of(context).textTheme.labelMedium?.color),
+            ),
           ),
           SizedBox(height: 10.h),
           Padding(
@@ -218,11 +232,16 @@ class LoginScreen extends GetView<LoginController> {
                   ),
                 ),
                 Spacer(),
-                Text(
-                  'Forgot Password?',
-                  style: CustomStyle.body2Text(
-                    color: Theme.of(context).textTheme.displayMedium?.color,
-                    fontSize: 16.sp,
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(Routes.FORGOT_PASSWORD);
+                  },
+                  child: Text(
+                    'Forgot Password?',
+                    style: CustomStyle.body2Text(
+                      color: Theme.of(context).textTheme.displayMedium?.color,
+                      fontSize: 16.sp,
+                    ),
                   ),
                 ),
               ],

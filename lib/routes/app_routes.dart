@@ -5,7 +5,7 @@ abstract class Routes {
   static const LOGIN = '/login';
   static const ON_BOARDING = '/onboarding';
   static const HOME = '/home';
-  static const MYTEAM = '/MyTeam';
+  static const CHAT = '/chat';
   static const SETTING = '/Setting';
   static const MAIN = '/main';
   static const WELCOME = '/welcome';
@@ -17,5 +17,8 @@ abstract class Routes {
   static const TEAM = '/Team';
   static const BOOK_MEETING = '/BookMeeting';
   static const EDITTEAMMATES = '/EditTeammates';
-  static const EDITGROUP = '/EditGroup';
+  static const REGISTER = '/SignUp';
+  static const FORGOT_PASSWORD = '/ForgotPassword';
+  static const VERIFICATION = '/Verification';
+  static const MAINSCREEN = '/MainScreen';
 }
