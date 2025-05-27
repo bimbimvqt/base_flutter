@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -15,7 +17,8 @@ class ShowWidget extends StatefulWidget {
   final AxisDirection direction;
 
   const ShowWidget(
-      {super.key, required this.child,
+      {super.key,
+      required this.child,
       this.delay,
       this.hasSlideTransition = true,
       this.durationMilis = 400,

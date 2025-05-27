@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:song_social/animations/ShowUpWidget.dart';
+import 'package:song_social/animations/show_up_widget.dart';
 
 import '../../../resources/app_assets.dart';
 import 'splash_controller.dart';

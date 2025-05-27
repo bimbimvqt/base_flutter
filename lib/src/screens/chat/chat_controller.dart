@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:song_social/models/message.dart';
-import 'package:song_social/services/germini_api_servive.dart';
+import 'package:song_social/services/GerminiService.dart';
 import 'dart:io';
 
 class ChatController extends GetxController {
