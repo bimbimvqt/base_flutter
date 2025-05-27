@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:startup_app/resources/custom_style.dart';
-import 'package:startup_app/resources/dimensions.dart';
+import 'package:song_social/resources/custom_style.dart';
+import 'package:song_social/resources/dimensions.dart';
 
 class TextFieldWidget extends StatefulWidget {
   const TextFieldWidget({

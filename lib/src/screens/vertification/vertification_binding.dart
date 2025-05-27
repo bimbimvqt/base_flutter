@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:startup_app/src/screens/vertification/vertification_controller.dart';
+import 'package:song_social/src/screens/vertification/vertification_controller.dart';
 
 class VertificationBinding extends Bindings {
   @override

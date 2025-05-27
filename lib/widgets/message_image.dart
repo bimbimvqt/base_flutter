@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:io';
-import 'package:startup_app/widgets/full_screen_image.dart';
+import 'package:song_social/widgets/full_screen_image.dart';
 
 class MessageImage extends StatelessWidget {
   final String imagePath;

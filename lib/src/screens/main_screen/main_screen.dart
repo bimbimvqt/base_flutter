@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:startup_app/resources/app_assets.dart';
-import 'package:startup_app/resources/custom_style.dart';
-import 'package:startup_app/src/screens/home/home_screen.dart';
+import 'package:song_social/resources/app_assets.dart';
+import 'package:song_social/resources/custom_style.dart';
+import 'package:song_social/src/screens/home/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

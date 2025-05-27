@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-import 'package:startup_app/resources/app_assets.dart';
+import 'package:song_social/resources/app_assets.dart';
 
 class ChatLoading extends StatelessWidget {
   const ChatLoading({super.key});

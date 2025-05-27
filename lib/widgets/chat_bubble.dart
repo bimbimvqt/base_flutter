@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:startup_app/models/message.dart';
-import 'package:startup_app/resources/app_assets.dart';
-import 'package:startup_app/widgets/chat_loading.dart';
-import 'package:startup_app/widgets/message_image.dart';
-import 'package:startup_app/src/screens/chat/chat_controller.dart';
+import 'package:song_social/models/message.dart';
+import 'package:song_social/resources/app_assets.dart';
+import 'package:song_social/widgets/chat_loading.dart';
+import 'package:song_social/widgets/message_image.dart';
+import 'package:song_social/src/screens/chat/chat_controller.dart';
 
 class ChatBubble extends StatelessWidget {
   final Message message;

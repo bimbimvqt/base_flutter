@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 import 'package:provider/provider.dart';
-import 'package:startup_app/routes/app_pages.dart';
-import 'package:startup_app/themes/theme_manager.dart';
+import 'package:song_social/routes/app_pages.dart';
+import 'package:song_social/themes/theme_manager.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
                 child: GetMaterialApp(
                   defaultTransition: Transition.noTransition,
                   debugShowCheckedModeBanner: false,
-                  title: 'startup_app',
+                  title: 'song_social',
                   theme: Provider.of<ThemeProvider>(context).themeData,
                   getPages: AppPages.routes,
                   initialRoute: AppPages.INITIAL,

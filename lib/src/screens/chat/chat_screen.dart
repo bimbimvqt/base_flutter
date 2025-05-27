@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:startup_app/resources/app_assets.dart';
-import 'package:startup_app/widgets/chat_bubble.dart';
-import 'package:startup_app/widgets/image_preview.dart';
+import 'package:song_social/resources/app_assets.dart';
+import 'package:song_social/widgets/chat_bubble.dart';
+import 'package:song_social/widgets/image_preview.dart';
 
 import 'chat_controller.dart';
 

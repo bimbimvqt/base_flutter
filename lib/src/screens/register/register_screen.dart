@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:startup_app/resources/app_assets.dart';
-import 'package:startup_app/resources/custom_style.dart';
-import 'package:startup_app/src/screens/register/register_controller.dart';
-import 'package:startup_app/widgets/button_outline.dart';
-import 'package:startup_app/widgets/text_field.dart';
+import 'package:song_social/resources/app_assets.dart';
+import 'package:song_social/resources/custom_style.dart';
+import 'package:song_social/src/screens/register/register_controller.dart';
+import 'package:song_social/widgets/button_outline.dart';
+import 'package:song_social/widgets/text_field.dart';
 
 import '../../../resources/dimensions.dart';
 

@@ -31,6 +31,7 @@ class ThemeProvider with ChangeNotifier {
   Future<void> setInitTheme() async {
     _prefs = await SharedPreferences.getInstance();
     _isDarkMode = _prefs.getBool('isDarkMode') ?? true;
+    debugPrint("isDarkMode: $_isDarkMode");
     themeData = _isDarkMode ? darkMode : lightMode;
   }
 }

@@ -25,7 +25,7 @@ cat > "lib/src/screens/$1/${1}_screen.dart" << EOL
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:startup_app/src/screens/$1/${1}_controller.dart';
+import 'package:song_social/src/screens/$1/${1}_controller.dart';
 
 class ${FEATURE_NAME}Screen extends GetView<${FEATURE_NAME}Controller> {
   const ${FEATURE_NAME}Screen({super.key});
@@ -56,7 +56,7 @@ EOL
 # Create binding file
 cat > "lib/src/screens/$1/${1}_binding.dart" << EOL
 import 'package:get/get.dart';
-import 'package:startup_app/src/screens/$1/${1}_controller.dart';
+import 'package:song_social/src/screens/$1/${1}_controller.dart';
 
 class ${FEATURE_NAME}Binding extends Bindings {
   @override
@@ -73,9 +73,9 @@ sed -i '' "/abstract class Routes {/a\\
   static const ${ROUTE_NAME} = '/${1}';" lib/routes/app_pages.dart
 
 # Add imports to app_pages.dart
-sed -i '' "/import 'package:startup_app\/src\/screens\/splash\/splash_screen.dart';/a\\
-import 'package:startup_app\/src\/screens\/$1\/${1}_screen.dart';\\
-import 'package:startup_app\/src\/screens\/$1\/${1}_binding.dart';" lib/routes/app_pages.dart
+sed -i '' "/import 'package:song_social\/src\/screens\/splash\/splash_screen.dart';/a\\
+import 'package:song_social\/src\/screens\/$1\/${1}_screen.dart';\\
+import 'package:song_social\/src\/screens\/$1\/${1}_binding.dart';" lib/routes/app_pages.dart
 
 # Add GetPage to app_pages.dart
 sed -i '' "/GetPage(\

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:startup_app/resources/custom_style.dart';
+import 'package:song_social/resources/custom_style.dart';
 
 class VertificationController extends GetxController {
   final codeController = TextEditingController().obs;

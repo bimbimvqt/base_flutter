@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:startup_app/resources/app_assets.dart';
-import 'package:startup_app/resources/custom_style.dart';
-import 'package:startup_app/routes/app_pages.dart';
-import 'package:startup_app/src/screens/main_screen/main_screen.dart';
-import 'package:startup_app/src/screens/login/login_controller.dart';
-import 'package:startup_app/widgets/button_outline.dart';
-import 'package:startup_app/widgets/text_field.dart';
+import 'package:provider/provider.dart';
+import 'package:song_social/resources/app_assets.dart';
+import 'package:song_social/resources/custom_style.dart';
+import 'package:song_social/routes/app_pages.dart';
+import 'package:song_social/src/screens/login/login_controller.dart';
+import 'package:song_social/themes/theme_manager.dart';
+import 'package:song_social/widgets/button_outline.dart';
+import 'package:song_social/widgets/text_field.dart';
 
 import '../../../resources/dimensions.dart';
 
@@ -41,6 +42,35 @@ class LoginScreen extends GetView<LoginController> {
                   child: Image.asset(
                     AppAssets.imgVector3,
                     width: 150.w,
+                  ),
+                ),
+                Positioned(
+                  top: 50.h,
+                  right: 20.w,
+                  child: Consumer<ThemeProvider>(
+                    builder: (context, themeProvider, child) {
+                      return GestureDetector(
+                        onTap: () {
+                          themeProvider.toggleTheme();
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(10.w),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.onTertiary.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(25),
+                            border: Border.all(
+                              color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
+                              width: 1,
+                            ),
+                          ),
+                          child: Icon(
+                            themeProvider.getIsDarkMode ? Icons.light_mode : Icons.dark_mode,
+                            color: Theme.of(context).textTheme.bodyLarge?.color,
+                            size: 24.sp,
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Align(

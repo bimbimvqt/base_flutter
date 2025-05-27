@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:startup_app/resources/app_assets.dart';
-import 'package:startup_app/src/screens/on_boarding/on_boarding_controller.dart';
-import 'package:startup_app/widgets/button_outline.dart';
+import 'package:song_social/resources/app_assets.dart';
+import 'package:song_social/src/screens/on_boarding/on_boarding_controller.dart';
+import 'package:song_social/widgets/button_outline.dart';
 
 import '../../../routes/app_pages.dart';
 

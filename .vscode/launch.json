@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "startup_app",
+      "name": "song_social",
       "request": "launch",
       "type": "dart",
       "program": "lib/main_prod.dart",
@@ -13,7 +13,7 @@
       "flutterMode": "debug"
     },
     {
-      "name": "startup_app_dev",
+      "name": "song_social_dev",
       "request": "launch",
       "type": "dart",
       "program": "lib/main_dev.dart",
@@ -22,13 +22,13 @@
     },
 
     {
-      "name": "startup_app (profile mode)",
+      "name": "song_social (profile mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile"
     },
     {
-      "name": "startup_app (release mode)",
+      "name": "song_social (release mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"

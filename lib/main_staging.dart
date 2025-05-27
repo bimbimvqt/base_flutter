@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:startup_app/main.dart';
+import 'package:song_social/main.dart';
 import 'flavors.dart';
 
 void main() {

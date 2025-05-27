@@ -2,8 +2,8 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:startup_app/models/message.dart';
-import 'package:startup_app/services/germini_api_servive.dart';
+import 'package:song_social/models/message.dart';
+import 'package:song_social/services/germini_api_servive.dart';
 import 'dart:io';
 
 class ChatController extends GetxController {
@@ -196,10 +196,21 @@ class ChatController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    // Ensure dotenv is initialized before using the service
+    _initializeService();
     ever(responseText, (_) {
       if (responseText.isNotEmpty) {
         scrollToBottom();
       }
     });
+  }
+
+  Future<void> _initializeService() async {
+    try {
+      await GerminiApiServive.initialize();
+      debugPrint('Gemini API service initialized successfully');
+    } catch (e) {
+      debugPrint('Error initializing Gemini API service: $e');
+    }
   }
 }
