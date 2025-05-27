@@ -7,14 +7,6 @@
   </h1>
 </a>
 
-[![Flutter CI Status](https://flutter-dashboard.appspot.com/api/public/build-status-badge?repo=flutter)](https://flutter-dashboard.appspot.com/#/build?repo=flutter)
-[![Discord badge][]][Discord instructions]
-[![Twitter handle][]][Twitter badge]
-[![BlueSky badge][]][BlueSky handle]
-[![codecov](https://codecov.io/gh/flutter/flutter/branch/master/graph/badge.svg?token=11yDrJU2M2)](https://codecov.io/gh/flutter/flutter)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5631/badge)](https://bestpractices.coreinfrastructure.org/projects/5631)
-[![SLSA 1](https://slsa.dev/images/gh-badge-level1.svg)](https://slsa.dev)
-
 Flutter is Google's SDK for crafting beautiful, fast user experiences for
 mobile, web, and desktop from a single codebase. Flutter works with existing
 code, is used by developers and organizations around the world, and is free and
